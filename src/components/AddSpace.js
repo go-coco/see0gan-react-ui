@@ -1,6 +1,43 @@
 import React from 'react'
+import SpaceService from '../services/SpaceService';
 
 export const AddSpace = () => {
+
+	// const [space, setSpace] = useState({
+	// 	// id : "", sequence
+	// 	spaceName : ""
+	// //	type : ""
+	// 	// intro1 : "",
+	// 	// intro2 : "",
+	// 	// capacity : "",
+	// 	// img1 : "",
+	// 	// img2 : "",
+	// 	// // address : kakao address api
+	// 	// price : "",
+	// 	// tag : "",
+	// 	// facility : "",
+	// 	// refund : "",
+	// 	// openingHour : ""
+
+	// });
+
+	// const handleChange = (e) => {
+	// 	const value = e.target.value;
+	// 	setSpace({...space, [e.target.name]: value });	
+	// };
+
+	// // TODO: add @CrossOrigin(origins ="http://localhost:3000")
+	// const saveSpace = (e) => {
+	// 	e.preventDefault();
+	// 	SpaceService.saveSapce(space)
+	// 		.then((Response) => {
+
+	// 	})
+	// 	.catch((error) => {
+	// 		console.error("eroor occurred");
+	// 	});
+	// }
+
   return (
 	  <div className='flex max-w-2xl mx-auto shadow border-b'>
 		  <div className='px-8 py-8'>
@@ -9,23 +46,49 @@ export const AddSpace = () => {
 			  </div>
 			<div className='items-center justify-center h-14 w-full my-4'>
 				<label className='block text-gray-600 text-sm font-normal'>공간 이름</label>
-				<input type="text" className="h-10 w-96 border mt-2 px-2 py-2" />
+				<input
+					type="text"
+					name="spaceName"
+					// value={space.spaceName}
+					// onChange={(e) => handleChange(e)}
+					className="h-10 w-96 border mt-2 px-2 py-2" />
 			</div>
 			<div className='items-center justify-center h-14 w-full my-4'>
 				<label className='block text-gray-600 text-sm font-normal'>공간 유형</label>
-				<input type="checkbox" className="h-4 border mt-2 px-2 py-2" />
+				<input type="checkbox" className="h-4 border mt-2 px-2 py-2" id="tbsp_type1" value="party" />
+					<label for="tbsp_type1" class="ellip">파티룸</label>   
+				<input type="checkbox" className="h-4 border mt-2 px-2 py-2" id="tbsp_type2" value="practice" />
+ 	    			<label for="tbsp_type2" class="ellip">연습실</label>   
+ 	    		<input type="checkbox" className="h-4 border mt-2 px-2 py-2" id="tbsp_type3" value="studio" />
+ 	   				<label for="tbsp_type3" class="ellip">촬영스튜디오</label>   
+ 	    		<input type="checkbox" className="h-4 border mt-2 px-2 py-2" id="tbsp_type4" value="conference" />
+ 					<label for="tbsp_type4" class="ellip">회의실</label>
 			</div>
 			<div className='items-center justify-center h-14 w-full my-4'>
 				<label className='block text-gray-600 text-sm font-normal'>공간 소개</label>
-				<input type="text" className="h-10 w-96 border mt-2 px-2 py-2" />
+				<input 
+				type="text"
+				name="intro"
+				// value={space.spaceName}
+				// onChange={(e) => handleChange(e)}
+				className="h-10 w-96 border mt-2 px-2 py-2" />
 			</div>
 			<div className='items-center justify-center h-14 w-full my-4'>
 				<label className='block text-gray-600 text-sm font-normal'>공간 상세 설명</label>
-				<input type="text"className="h-10 w-96 border mt-2 px-2 py-2"/>
+				<input 
+				type="text"
+				name="intro"
+				// value={space.spaceName}
+				// onChange={(e) => handleChange(e)}
+				className="h-10 w-96 border mt-2 px-2 py-2"/>
 			</div>
 			<div className='items-center justify-center h-14 w-full my-4'>
 				<label className='block text-gray-600 text-sm font-normal'>최대 수용 인원</label>
-				<input type="text" className="h-10 w-96 border mt-2 px-2 py-2"/>
+				<input type="text"
+				name="intro"
+				// value={space.spaceName}
+				// onChange={(e) => handleChange(e)}
+				className="h-10 w-96 border mt-2 px-2 py-2"/>
 			</div>
 			<div className='items-center justify-center h-14 w-full my-4'>
 				<label className='block text-gray-600 text-sm font-normal'>주소</label>
@@ -49,14 +112,19 @@ export const AddSpace = () => {
 			</div>
 			<div className='items-center justify-center h-14 w-full my-4'>
 				<label className='block text-gray-600 text-sm font-normal'>웹사이트</label>
-				<input type="text" className="h-10 w-96 border mt-2 px-2 py-2"/>
+				<input type="text"
+				name="intro"
+				// value={space.spaceName}
+				// onChange={(e) => handleChange(e)}
+				className="h-10 w-96 border mt-2 px-2 py-2"/>
 			</div>
 				<div className='items-center justify-center h-24  my-4 space-x-4'>
-					<button className='rounded text-white font-semibold bg-green-500 hover:bg-green-800 px-6 py-2'>
+					<button 
+					//onClick={saveSpace}
+					className='rounded text-white font-semibold bg-green-500 hover:bg-green-800 px-6 py-2'>
 						저장
 					</button>
 				</div>
-		{/* </div> */}
 </div>
 	  </div>
 
