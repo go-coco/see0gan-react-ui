@@ -1,24 +1,35 @@
 import PropTypes from 'prop-types'
-import Navbar from './Navbar'
+import Navbar, { MenuContainer } from './MenuContainer'
 import '../index.css'
+import axios from "axios";
+import { FaBars } from 'react-icons/fa'
 
-const Header = () => {
+const SPACE_API_BASE_URL = "http://localhost:8080/api/v1/spaces";
+
+const Header = ({onClick, showMenu}) => {
 
   const search = (e) => {
 
     const value = e.target.value;
 
-    if(window.event.keyCode==13){ // axios 
+    if(window.event.keyCode===13){ // axios 
       console.log("Enter!");
       console.log(value);
-    
+      e.preventDefault();
+      axios.get(SPACE_API_BASE_URL, value);
     }
   }
 
+  // const onClick = () => {
+  //   console.log('Click');
+  // }
    
-  const navbar = (e) => {
-      return <Navbar/>
-  }
+  // const showBar = (e) => {
+    
+  //   console.log(showMenu);
+  //   if(!showMenu)
+  //     return <MenuContainer/>
+  // }
 
   return (
 
@@ -37,9 +48,12 @@ const Header = () => {
         {/* <div className="sp_insert_nav"><a href="/hostCenter">내 공간 등록하기</a></div> */}
         <button 
           className="btn_menu"
-          onClick={(e) => navbar(e)}>
-          <img id="icon_menu" alt="메뉴"  width="24" />
+          // onMouseDown={(e) => navbar(e)}
+          onClick={onClick}
+          >
+          < FaBars style={{ 	display: 'flex', cursor: 'pointer'}} />
         </button>
+        {/* {showMenu && <MenuContainer /> } */}
       </div>
       {/* </div> */}
     </header>

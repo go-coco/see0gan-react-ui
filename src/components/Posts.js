@@ -12,10 +12,14 @@ const Posts = ({posts}) => {
 
   return (
     <>
-  
+    	<section className="sp_recommend">
+       <div className='list_today_sp'>
     {posts.map((space) => (
       <Post key={space.id} post={space}/>
+    
     ))}
+</div>
+      </section>
     </>
     // <div className="w-8 m-auto min-h-630">
 	  // <div class="main_wrap"></div>

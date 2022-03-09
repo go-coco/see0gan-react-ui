@@ -238,7 +238,16 @@ a, a:link, a:visited{
 	display: none;
 }
 
-.post{
+/* posts */
+.list_today_sp{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+/* .sp_recommend{
+	margin: 0 auto;
+} */
+.post {
 	width: 360px;
 	margin-top: 20px;
 	border-bottom: 1px solid #ebebeb;
@@ -249,6 +258,85 @@ a, a:link, a:visited{
 	overflow: hidden;
 }
 .post img{
-	width: 100%;
-	
+	width: 100%;	
+}
+.sp_info{
+	padding: 14px;
+	color: #656565;
+	font-size: 13px;
+}
+.sp_info_tit{
+	font-size: 22px;
+	color: #000;
+	text-align: left;
+	font-weight: bold;
+	margin: 6px 0;
+}
+.sp_tags{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.tag_area_name{
+	font-weight: bold;
+}
+.tag_area_name:before{
+	content:"";
+	/* background: url(/resources/icon/map.jpg) no-repeat; */
+	display: inline-block;
+	width: 10px;
+	height:12px;
+	background-size: 100%;
+}
+.tag_area_name:after{
+	content:"";
+	border-right: 1.5px solid #ccc;
+	margin: 5px;
+}
+.sp_info_price_hour{
+	margin-top: 10px;
+	display: inline-block;
+	width: 59%;
+}
+.price{
+	font-size: 20px;
+	color: #6d3afb;
+	font-weight: bolder;
+}
+.info_maxUser{
+	display: inline-block;
+	text-align: right;
+	width: 40%;
+
+}
+/* .info_maxUser img{
+	 width: 15px; 
+} */
+@media (max-width: 1254px) {
+	.post{
+		margin: 20px;
+	}
+	.list_today_sp{
+		justify-content: center;
+	}
+	.main_wrap{
+		padding: 50px 0px;
+	}
+	.sp_type_wrap{
+		margin: 50px 20px;
+		justify-content: center;
+	}	
+}
+.blank{
+	display : none;
+}
+@media (min-width: 1254px) {
+	.main_wrap{
+		width: 1180px;
+		margin: 0 auto;
+	}
+}
+section{
+	margin: 0 auto;
+	padding: 70px 0;
 }
