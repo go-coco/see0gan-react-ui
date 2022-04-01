@@ -40,6 +40,11 @@ export const AddSpace = () => {
 		url: ""
 	});
 
+	const validate = e => {
+	// 	<input type ="text" id= "i-phone" name="TBH_PHONE" placeholder="휴대폰 번호"/>
+	// 	<div className="form_check" id="phone_check"></div>
+	}
+
 	const handleChange = (e) => {
 		const value = e.target.value;
 		setSpace({...space, [e.target.name]: value });	
